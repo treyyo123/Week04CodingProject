@@ -7,9 +7,12 @@ public class Project {
 		
 		int[] ages = {3, 9, 23, 64, 2, 8, 28, 93};//declared and initialized array ages
 		 //System.out.print(findLastElement(ages));;
-		System.out.print("The difference for ages is ");
+		System.out.println("The difference for ages is:");
 		findDifference(ages);
-	
+		
+		System.out.println("The average for ages is:");
+		findAverage(ages);
+		
 		int[] ages2 = new int[9];
 		ages2[0] = 3;
 		ages2[1] = 6;
@@ -20,9 +23,20 @@ public class Project {
 		ages2[6] = 21;
 		ages2[7] = 24;
 		ages2[8] = 27;
-		System.out.print("The difference for ages2 is ");
+		System.out.println("The difference for ages2 is:");
 		findDifference(ages2);
-	
+		System.out.println("The average for ages2 is:");
+		findAverage(ages2);
+		
+		String[] names = {"Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"};
+		double nameLength = 0;
+		for(int i = 0; i < names.length; i++) {
+			int z = names[i].length();
+			nameLength = nameLength + z;
+		}
+		System.out.println("The average number of letters is " + nameLength / names.length);
+		
+		
 	}//end of main
 
 	public static void findDifference(int[] x) {//since the same thing has to be completed more than once, created a method to handle it
@@ -32,6 +46,17 @@ public class Project {
 
 		}
 		System.out.println(result - x[0]);
-		//return result;
-	}
+		
+	}//end of findDifference
+	
+	public static void findAverage(int[]x) {
+		double sum = 0;
+		for(int i = 0; i < x.length; i++) {
+			sum = sum + x[i];
+		}
+		double avg = sum / x.length;
+		System.out.println(avg);
+	}//end of findAverage
+	
+	
 }//end of class
