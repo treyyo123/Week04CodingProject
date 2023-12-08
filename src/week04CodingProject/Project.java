@@ -1,6 +1,8 @@
 package week04CodingProject;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Project {
 
@@ -112,8 +114,50 @@ iii. Show that using the index values for the elements is dynamic (works for arr
 		 */
 			System.out.println("8) " + fullName("Ron", "Weasley"));
 		 
+		/*
+		 * 9. Write a method that takes an array of int and returns true if the sum of all the ints in the array is greater than 100.
+		 */
+		 	
+		int[] notTrue = {6, 51, 12};	
+		 System.out.println("9) " + sumGreater100(ages));
+		 System.out.println("9) " + sumGreater100(notTrue));	
 			
-			
+		/*
+		 * 10. Write a method that takes an array of double and returns the average of all the elements in the array.
+		 */
+		 
+		 double[] decimals = {12.65, 9.13, 54.99, 34.05};
+		 System.out.println("10) " + accidentallyDidThisAlready(decimals));
+		 
+		 /*
+		  * 11. Write a method that takes two arrays of double and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
+		  */
+		 
+		 double[] decimals2 = {1.15, 9.32, 4.67};
+		 System.out.println("11) " + isFirstGreater(decimals, decimals2));
+		 
+		 /*
+		  * 12. Write a method called willBuyDrink that takes a boolean isHotOutside, and a double moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
+		  */
+		 
+		 /*
+		  * 13. Create a method of your own that solves a problem. In comments, write what the method does and why you created it.
+		  */
+		 
+		 List<String> tvGuide = new ArrayList<>();
+		 tvGuide.add("The Simpsons");
+		 tvGuide.add("Law & Order");
+		 tvGuide.add("Aerial America");
+		 tvGuide.add("The News");
+		 tvGuide.add("Bob's Burgers");
+		 tvGuide.add("Family Guy");
+		 tvGuide.add("Big Bang Theory");
+		 tvGuide.add("Impractical Jokers");
+		 tvGuide.add("The Walking Dead");
+		 
+		 System.out.print("13) ");
+		 whatToWatch(tvGuide);
+		 
 	}//end of main
 
 	public static String helloConcat(String word, int n) {//question 7
@@ -124,12 +168,65 @@ iii. Show that using the index values for the elements is dynamic (works for arr
 		return concat;
 	}//end of helloConcat
 	
-	public static String fullName(String firstName, String lastName) {
+	public static String fullName(String firstName, String lastName) {//question 8
 		String comboName = firstName + " " + lastName;
 		return comboName;
 			}//end of fullName
 	
-	public static double findAverage(int[]x) {
+	public static Boolean sumGreater100(int[] p) {//question 9
+		int sum = 0;
+		for(int i = 0; i < p.length; i++) {
+			sum = sum + p[i];
+		}
+		if(sum > 100) {
+			return true;
+		} else {
+			return false;
+		}
+	}//end of sumGreater100
+	
+	public static double accidentallyDidThisAlready(double[] g) {//question 10
+		double sum = 0;
+		for(int i = 0; i < g.length; i++) {
+			sum = sum + g[i];
+		}
+		double avg = sum / g.length;
+		return avg;
+	}//end of accidentallyDidThisAlready
+	
+	public static Boolean isFirstGreater(double[] a, double[] b) {//question 11
+		double sum = 0;
+		for(int i = 0; i < a.length; i++) {
+			sum = sum + a[i];
+		}
+		double avg = sum / a.length;
+		
+		double sum2 = 0;
+		for(int i = 0; i < b.length; i++) {
+			sum2 = sum2 + b[i];
+		}
+		double avg2 = sum2 / b.length;
+		
+		if(avg > avg2) {
+			return true;
+		}else {
+			return false;
+		}
+	}//isFirstGreater
+	
+	public static void whatToWatch(List<String> x) {//question 13 this method takes a list of shows and tells you what to watch in order of preference, if preferred shows are on. if none of the preferred shows are on then it tells you to get off the couch and do something worthwhile. i created it because sometimes we all need that extra motivation to get up and get active, unless something really really good is on tv.
+		if(x.contains("Football")) {
+			System.out.println("Watch football");
+		}else if(x.contains("Bob's Burgers")) {
+			System.out.println("Watch Bob's Burgers");
+		}else if(x.contains("Impractical Jokers")) {
+			System.out.println("Watch Impractical Jokers");
+		}else {
+			System.out.println("Go do something productive!");
+		}
+	}//end of whatToWatch
+	
+	public static double findAverage(int[] x) {
 		double sum = 0;
 		for(int i = 0; i < x.length; i++) {
 			sum = sum + x[i];
