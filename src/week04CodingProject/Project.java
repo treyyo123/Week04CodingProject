@@ -140,6 +140,15 @@ iii. Show that using the index values for the elements is dynamic (works for arr
 		  * 12. Write a method called willBuyDrink that takes a boolean isHotOutside, and a double moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
 		  */
 		 
+		 		double cashOnHand = 9.25;
+		 		 Boolean isHotOutside = true;
+		 		 System.out.println("12) " + willBuyDrink(isHotOutside, cashOnHand));
+		 
+		 		 double walletStuff = 20.07;
+		 		 Boolean prettyWarmToday = false;
+		 		 System.out.println("12) " + willBuyDrink(prettyWarmToday, walletStuff));
+		 		 System.out.println("12) " + willBuyDrink(isHotOutside, walletStuff));
+		 		 
 		 /*
 		  * 13. Create a method of your own that solves a problem. In comments, write what the method does and why you created it.
 		  */
@@ -213,6 +222,14 @@ iii. Show that using the index values for the elements is dynamic (works for arr
 			return false;
 		}
 	}//isFirstGreater
+	
+	public static Boolean willBuyDrink(Boolean isHotOutside, double moneyInPocket) {//question 12
+		if(isHotOutside && moneyInPocket > 10.50) {
+			return true;
+		}else {
+			return false;
+		}
+	}//end of isHotOutside
 	
 	public static void whatToWatch(List<String> x) {//question 13 this method takes a list of shows and tells you what to watch in order of preference, if preferred shows are on. if none of the preferred shows are on then it tells you to get off the couch and do something worthwhile. i created it because sometimes we all need that extra motivation to get up and get active, unless something really really good is on tv.
 		if(x.contains("Football")) {
